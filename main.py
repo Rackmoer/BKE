@@ -20,3 +20,9 @@ random_agent = RandomAgent()
 validation_agent = random_agent
 validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=1000)
 plot_validation(validation_result)
+
+def NewAgent(name, alph, epsi):
+  name = MyAgent(alpha=alph, epsilon=epsi)
+  train(name, 1000000)
+  validation_result = validate(agent_x=name, agent_o=validation_agent, iterations=10000)
+  plot_validation(validation_result)
