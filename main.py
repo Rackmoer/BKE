@@ -11,18 +11,20 @@ class MyAgent(MLAgent):
       reward = 0
     return reward
 
-my_agent = MyAgent(1, 0.1)
-train(my_agent, 10000)
+#my_agent = MyAgent(1, 0.1)
+#train(my_agent, 10000)
 
 random.seed(1)
 random_agent = RandomAgent()
 
 validation_agent = random_agent
-validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=1000)
-plot_validation(validation_result)
+#validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=1000)
+#plot_validation(validation_result)
 
 def NewAgent(name, alph, epsi):
   name = MyAgent(alpha=alph, epsilon=epsi)
-  train(name, 1000000)
-  validation_result = validate(agent_x=name, agent_o=validation_agent, iterations=10000)
+  train(name, 100000)
+  validation_result = validate(agent_x=name, agent_o=validation_agent, iterations=1000)
   plot_validation(validation_result)
+
+NewAgent(1, 0.00001, 0.00001)
